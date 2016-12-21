@@ -1,0 +1,24 @@
+
+<style>
+  body {
+    background: <%= @color %>;
+  }
+</style>
+
+
+<h1>About</h1>
+<p>My favorite color is <%= @color %></p>
+
+<% if @size > 12 %>
+  <p>My shoe size is <%= @size %>. I have HUGE feet.</p>
+<% else %>
+  <p>My shoe size is <%= @size %></p>
+<%end%>
+
+  <% @travel_pics.each do |pic| %>
+    <%= image_tag pic %>
+<%end%>
+
+
+
+<p>Stay tuned for cool travel stuff!</p>
