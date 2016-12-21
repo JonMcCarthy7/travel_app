@@ -8,15 +8,17 @@
 
 <h1>About</h1>
 <p>My favorite color is <%= @color %></p>
+<%= link_to "blue", about_path(color: "blue"), class: "btn btn-primary" %>
+<%= link_to "red", about_path(color: "red"), class: "btn btn-danger" %>
 
-<% if @size > 12 %>
-  <p>My shoe size is <%= @size %>. I have HUGE feet.</p>
-<% else %>
-  <p>My shoe size is <%= @size %></p>
+  <% if @size > 12 %>
+    <p>My shoe size is <%= @size %>. I have HUGE feet.</p>
+  <% else %>
+    <p>My shoe size is <%= @size %></p>
 <%end%>
 
   <% @travel_pics.each do |pic| %>
-    <%= image_tag pic %>
+    <%= image_tag pic, class: "img-responsive" %>
 <%end%>
 
 
