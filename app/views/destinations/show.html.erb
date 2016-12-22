@@ -1,0 +1,20 @@
+<% if notice != nil %>
+  <p id="notice" class=" alert alert-success alert-dismissable" role="alert">"
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <%= notice %>
+  </p>
+<%end%>
+
+<h1><%= "#{@destination.city}, #{@destination.country}" %></h1>
+
+<p>
+  <strong>Description:</strong>
+  <%= @destination.description %>
+</p>
+
+<div class="row">
+  <div class="actions form-group">
+    <%= link_to 'Edit', edit_destination_path(@destination), class: "btn btn-warning" %>
+    <%= link_to 'Back', destinations_path, class: "btn btn-info" %>
+  </div>
+</div>

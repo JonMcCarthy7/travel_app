@@ -1,0 +1,30 @@
+
+
+<% if notice != nil %>
+  <p id="notice" class=" alert alert-success" role="alert">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <%= notice %>
+  </p>
+<%end%>
+
+<h1>My Destination Wish List!</h1>
+
+
+<%= link_to 'New Destination', new_destination_path, class: "btn btn-info col-md-12" %>
+
+
+
+
+<div class="row">
+  <% @destinations.each do |destination| %>
+    <div class="col-md-4">
+      <div class="well">
+      <p><%= "#{destination.city}, #{destination.country}" %></p>
+      <p><%= destination.description %></p>
+      <p><%= link_to 'Show', destination, class: "btn btn-primary" %>
+      <%= link_to 'Edit', edit_destination_path(destination), class: "btn btn-warning" %>
+      <%= link_to 'Destroy', destination, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
