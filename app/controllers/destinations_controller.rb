@@ -4,7 +4,12 @@ class DestinationsController < ApplicationController
   # GET /destinations
   # GET /destinations.json
   def index
+    if params[:country] == nil
     @destinations = Destination.all
+    else
+    @destinations = Destination.where(country: params[:country].titleize)
+    end
+    @my_countries = Destination.select(:country).distinct
   end
 
   # GET /destinations/1
@@ -69,6 +74,6 @@ class DestinationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def destination_params
-      params.require(:destination).permit(:city, :country, :description)
+      params.require(:destination).permit(:city, :country, :description, :population, :avatar)
     end
 end

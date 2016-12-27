@@ -18,7 +18,11 @@ class WelcomeController < ApplicationController
 
   def contact
   end
+
   def activity
+    @activity_pics = ['camp.jpg', 'hike.jpg', 'food.jpg', 'surf.jpg'].shuffle
+
+    @color = params[:color]
   end
-  
+
 end

@@ -5,7 +5,10 @@
   </p>
 <%end%>
 
+<%= image_tag @destination.avatar.url(:medium) %>
+
 <h1><%= "#{@destination.city}, #{@destination.country}" %></h1>
+<h2>Population(In Millions): <%= @destination.population %></h2>
 
 <p>
   <strong>Description:</strong>

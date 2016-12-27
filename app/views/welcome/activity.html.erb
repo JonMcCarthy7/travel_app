@@ -1,0 +1,19 @@
+
+<style>
+  body {
+    color: <%= @color %>;
+  }
+</style>
+
+<h1>Activities</h1>
+
+<h3>Here are some activities I like to do on my travels.</h3>
+
+<%= link_to "Blue", activity_path(color: "blue"), class: "btn btn-primary" %>
+<%= link_to "Yellow", activity_path(color: "yellow"), class: "btn btn-warning" %>
+<%= link_to "Red", activity_path(color: "red"), class: "btn btn-danger" %>
+<%= link_to "Green", activity_path(color: "green"), class: "btn btn-success" %>
+
+<% @activity_pics.each do |pic| %>
+  <%= image_tag pic, class: "img-responsive" %>
+<%end%>

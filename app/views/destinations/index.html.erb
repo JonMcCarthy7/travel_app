@@ -1,13 +1,27 @@
-
-
 <% if notice != nil %>
-  <p id="notice" class=" alert alert-success" role="alert">
+  <p id="notice" class=" alert alert-success alert-dismissable" role="alert">
     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
     <%= notice %>
   </p>
 <%end%>
 
-<h1>My Destination Wish List!</h1>
+
+<center><h1>My Destination Wish List!</h1></center>
+
+
+
+<h3><ul class="nav nav-pills nav-justified" role="tablist">
+
+<li><%= link_to "All", destinations_path %></li><!-- /destinations -->
+<% @my_countries.each do |c| %>
+  <li><%= link_to c.country, destinations_path(country: c.country) %></li>
+  <%end%>
+
+
+</ul></h3>
+
+
+
 
 
 <%= link_to 'New Destination', new_destination_path, class: "btn btn-info col-md-12" %>
@@ -19,7 +33,11 @@
   <% @destinations.each do |destination| %>
     <div class="col-md-4">
       <div class="well">
-      <p><%= "#{destination.city}, #{destination.country}" %></p>
+        <% if destination.avatar_file_name != nil %>
+        <%= image_tag @destination.avatar.url(:medium), class: "img-responsive" %>
+        <%end%>
+      <h4><%= "#{destination.city}, #{destination.country}" %></h4>
+      <p>Population(In Millions): <%= destination.population %></p>
       <p><%= destination.description %></p>
       <p><%= link_to 'Show', destination, class: "btn btn-primary" %>
       <%= link_to 'Edit', edit_destination_path(destination), class: "btn btn-warning" %>
