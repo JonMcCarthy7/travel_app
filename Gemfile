@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 
+gem 'geocoder'
 gem 'data-confirm-modal'
 gem 'paperclip'
 gem 'bootstrap-sass'
