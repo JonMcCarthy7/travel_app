@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :destinations
-  get 'index' => 'welcom#index'
+  get 'index' => 'welcome#index'
 
   get 'about' => 'welcome#about'
 
