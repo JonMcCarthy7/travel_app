@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 
+gem 'figaro'
 gem 'geocoder'
 gem 'data-confirm-modal'
 gem 'paperclip'

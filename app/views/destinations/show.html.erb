@@ -15,12 +15,7 @@
   <%= @destination.description %>
 </p>
 
-<div class="row">
-  <div class="actions form-group">
-    <%= link_to 'Edit', edit_destination_path(@destination), class: "btn btn-warning" %>
-    <%= link_to 'Back', destinations_path, class: "btn btn-info" %>
-  </div>
-</div>
+
 
 <div id="destination-map"></div>
 
@@ -31,8 +26,8 @@
    description = '<%= j @destination.description %>';
 <% end %>
 
-<h1><%= @destination.address %></h1>
 
- <p><%= @destination.latitude %>, <%= @destination.longitude %></p>
-
- <p><%= @destination.description %></p>
+  <div class="actions form-group">
+    <%= link_to 'Edit', edit_destination_path(@destination), class: "btn btn-warning" %>
+    <%= link_to 'Back', destinations_path, class: "btn btn-info" %>
+  </div>
